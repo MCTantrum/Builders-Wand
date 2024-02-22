@@ -6,7 +6,7 @@
 
     <parent>
         <groupId>de.False</groupId>
-        <version>2.24.0</version>
+        <version>MCT</version>
         <artifactId>Builders_Wand</artifactId>
     </parent>
 
@@ -31,7 +31,7 @@
 
         <repository>
             <id>sk89q-repo</id>
-            <url>https://maven.sk89q.com/repo/</url>
+            <url>https://maven.enginehub.org/repo/</url>
         </repository>
 
         <repository>
@@ -54,10 +54,10 @@
             <url>https://repo.codemc.org/repository/maven-public/</url>
         </repository>
 
-        <repository>
+        <!--<repository>
             <id>IntellectualSites</id>
             <url>https://mvn.intellectualsites.com/content/groups/public/</url>
-        </repository>
+        </repository>-->
 
         <repository>
             <id>coreprotect-repo</id>
@@ -75,13 +75,13 @@
         <dependency>
             <groupId>com.bgsoftware</groupId>
             <artifactId>SuperiorSkyblockAPI</artifactId>
-            <version>latest</version>
+            <version>2023.2</version>
         </dependency>
 
         <dependency>
             <groupId>com.sk89q.worldedit</groupId>
             <artifactId>worldedit-bukkit</artifactId>
-            <version>7.0.1-SNAPSHOT</version>
+            <version>7.2.15</version>
             <scope>provided</scope>
         </dependency>
 
@@ -95,7 +95,7 @@
         <dependency>
             <groupId>com.sk89q.worldguard</groupId>
             <artifactId>worldguard-bukkit</artifactId>
-            <version>7.0.1-SNAPSHOT</version>
+            <version>7.1.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
 
@@ -130,7 +130,7 @@
         <dependency>
             <groupId>com.github.TechFortress</groupId>
             <artifactId>GriefPrevention</artifactId>
-            <version>16.7.1</version>
+            <version>16.18</version>
             <scope>provided</scope>
             <exclusions>
                 <exclusion>
@@ -163,16 +163,6 @@
         </dependency>
 
         <dependency>
-            <groupId>com.residence</groupId>
-            <artifactId>residence</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>
-                ${pom.basedir}/external/Residence.jar
-            </systemPath>
-        </dependency>
-
-        <dependency>
             <groupId>com.github.LoneDev6</groupId>
             <artifactId>ItemsAdder-API</artifactId>
             <version>0.1.2</version>
@@ -182,128 +172,140 @@
         <dependency>
             <groupId>com.github.angeschossen</groupId>
             <artifactId>LandsAPI</artifactId>
-            <version>4.12.12</version>
+            <version>5.27.2</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>de.False</groupId>
             <artifactId>Builders_Wand_abstraction</artifactId>
-            <version>2.24.0</version>
+            <version>MCT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>de.False</groupId>
             <artifactId>Builders_Wand_1_8_R1</artifactId>
-            <version>2.24.0</version>
+            <version>MCT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>de.False</groupId>
             <artifactId>Builders_Wand_1_8_R2</artifactId>
-            <version>2.24.0</version>
+            <version>MCT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>de.False</groupId>
             <artifactId>Builders_Wand_1_8_R3</artifactId>
-            <version>2.24.0</version>
+            <version>MCT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>de.False</groupId>
             <artifactId>Builders_Wand_1_9_R1</artifactId>
-            <version>2.24.0</version>
+            <version>MCT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>de.False</groupId>
             <artifactId>Builders_Wand_1_9_R2</artifactId>
-            <version>2.24.0</version>
+            <version>MCT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>de.False</groupId>
             <artifactId>Builders_Wand_1_10</artifactId>
-            <version>2.24.0</version>
+            <version>MCT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>de.False</groupId>
             <artifactId>Builders_Wand_1_11</artifactId>
-            <version>2.24.0</version>
+            <version>MCT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>de.False</groupId>
             <artifactId>Builders_Wand_1_12</artifactId>
-            <version>2.24.0</version>
+            <version>MCT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>de.False</groupId>
             <artifactId>Builders_Wand_1_13_R1</artifactId>
-            <version>2.24.0</version>
+            <version>MCT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>de.False</groupId>
             <artifactId>Builders_Wand_1_13_R2</artifactId>
-            <version>2.24.0</version>
+            <version>MCT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>de.False</groupId>
             <artifactId>Builders_Wand_1_14</artifactId>
-            <version>2.24.0</version>
+            <version>MCT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>de.False</groupId>
             <artifactId>Builders_Wand_1_15</artifactId>
-            <version>2.24.0</version>
+            <version>MCT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>de.False</groupId>
             <artifactId>Builders_Wand_1_16_R1</artifactId>
-            <version>2.24.0</version>
+            <version>MCT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>de.False</groupId>
             <artifactId>Builders_Wand_1_16_R2</artifactId>
-            <version>2.24.0</version>
+            <version>MCT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>de.False</groupId>
             <artifactId>Builders_Wand_1_16_R3</artifactId>
-            <version>2.24.0</version>
+            <version>MCT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>de.False</groupId>
             <artifactId>Builders_Wand_1_17</artifactId>
-            <version>2.24.0</version>
+            <version>MCT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>de.False</groupId>
             <artifactId>Builders_Wand_1_18</artifactId>
-            <version>2.24.0</version>
+            <version>MCT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>de.False</groupId>
             <artifactId>Builders_Wand_1_18_R2</artifactId>
-            <version>2.24.0</version>
+            <version>MCT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>de.False</groupId>
             <artifactId>Builders_Wand_1_19</artifactId>
-            <version>2.24.0</version>
+            <version>MCT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.False</groupId>
+            <artifactId>Builders_Wand_1_19_R3</artifactId>
+            <version>MCT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.False</groupId>
+            <artifactId>Builders_Wand_1_20</artifactId>
+            <version>MCT</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

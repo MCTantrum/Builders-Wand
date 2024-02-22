@@ -31,7 +31,7 @@ public class Update {
     }
 
     public void sendUpdateMessage() {
-        int newVersion = Integer.parseInt(getNewVersion().replaceAll("[^\\d]", ""));
+/*        int newVersion = Integer.parseInt(getNewVersion().replaceAll("[^\\d]", ""));
         int currentVersion = Integer.parseInt(getCurrentVersion().replaceAll("[^\\d]", ""));
 
         logger.info("Looking for updates...");
@@ -41,12 +41,12 @@ public class Update {
             logger.info("Current version " + getCurrentVersion());
             logger.info("Newest version " + getNewVersion());
             logger.info("Download the new version here: https://www.spigotmc.org/resources/" + resourceId);
-        } else {
+        } else {*/
             logger.info("Plugin is up-to-date");
-        }
+       // }
     }
 
-    public void sendUpdateMessage(Player player) {
+/*    public void sendUpdateMessage(Player player) {
         int newVersion;
         long now = Instant.now().getEpochSecond();
         if (lastVersionTimestamp == 0 || now - 18000 > lastVersionTimestamp) {
@@ -63,9 +63,9 @@ public class Update {
             String message = "There is a new update, download the new version here: https://www.spigotmc.org/resources/" + resourceId;
             MessageUtil.sendMessage(player, message);
         }
-    }
+    }*/
 
-    private String getNewVersion() {
+/*    private String getNewVersion() {
         try {
             URL url = new URL(REQUEST_URL);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -83,7 +83,7 @@ public class Update {
             logger.info(e.getMessage());
             return "0";
         }
-    }
+    }*/
 
     private String getCurrentVersion() {
         return plugin.getDescription().getVersion();

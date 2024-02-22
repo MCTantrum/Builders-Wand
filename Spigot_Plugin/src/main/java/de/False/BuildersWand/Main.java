@@ -150,6 +150,12 @@ public class Main extends JavaPlugin
                 case "v1_19_R1":
                     nms = new v_1_19_R1(this);
                     break;
+                case "v1_19_R3":
+                    nms = new v_1_19_R3(this);
+                    break;
+                case "v1_20_R1":
+                    nms = new v_1_20_R1(this);
+                    break;
                 default:
                     throw new RuntimeException("Could not found nms for version " + version);
             }

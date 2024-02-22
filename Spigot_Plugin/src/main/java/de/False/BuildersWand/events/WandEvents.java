@@ -1,8 +1,5 @@
 package de.False.BuildersWand.events;
 
-import com.bekvon.bukkit.residence.Residence;
-import com.bekvon.bukkit.residence.protection.ClaimedResidence;
-import com.bekvon.bukkit.residence.protection.ResidencePermissions;
 import com.bgsoftware.superiorskyblock.api.SuperiorSkyblockAPI;
 import com.bgsoftware.superiorskyblock.api.wrappers.SuperiorPlayer;
 import com.gmail.nossr50.mcMMO;
@@ -27,7 +24,6 @@ import de.False.BuildersWand.version.NMS;
 import dev.lone.itemsadder.api.ItemsAdder;
 import me.angeschossen.lands.api.integration.LandsIntegration;
 import me.angeschossen.lands.api.land.Area;
-import me.angeschossen.lands.api.role.enums.RoleSetting;
 import me.ryanhamshire.GriefPrevention.GriefPrevention;
 import net.coreprotect.CoreProtect;
 import net.coreprotect.CoreProtectAPI;
@@ -717,11 +713,11 @@ public class WandEvents implements Listener {
         Plugin LandsPlugin = getExternalPlugin("Lands");
         if (LandsPlugin != null) {
             LandsIntegration landsIntegration = new LandsIntegration(plugin);
-            Area area = landsIntegration.getAreaByLoc(location);
+            Area area = landsIntegration.getArea(player.getWorld(), location.getBlockX(), location.getBlockY(), location.getBlockZ());
             if (area == null) {
-                return true;
+                return false;
             }
-            return area.canSetting(player.getUniqueId(), RoleSetting.BLOCK_PLACE);
+            return area.isTrusted(player.getUniqueId());
         }
 
         Plugin SuperiorSkyblock2Plugin = getExternalPlugin("SuperiorSkyblock2");
@@ -736,19 +732,6 @@ public class WandEvents implements Listener {
         Plugin townyPlugin = getExternalPlugin("Towny");
         if (townyPlugin != null) {
             if (!PlayerCacheUtil.getCachePermission(player, location, Material.STONE, TownyPermission.ActionType.BUILD)) {
-                return false;
-            }
-        }
-
-        Plugin residencePlugin = getExternalPlugin("Residence");
-        if (residencePlugin != null) {
-            ClaimedResidence res = Residence.getInstance().getResidenceManager().getByLoc(location);
-            if (res == null) {
-                return false;
-            }
-
-            ResidencePermissions perms = res.getPermissions();
-            if (!perms.playerHas(player, com.bekvon.bukkit.residence.containers.Flags.build, false)) {
                 return false;
             }
         }
@@ -816,12 +799,12 @@ public class WandEvents implements Listener {
         if (LandsPlugin != null) {
             LandsIntegration landsIntegration = new LandsIntegration(plugin);
             for (Block selectionBlock : selection) {
-                Area area = landsIntegration.getAreaByLoc(selectionBlock.getLocation());
+                Area area = landsIntegration.getArea(player.getWorld(), selectionBlock.getX(), selectionBlock.getY(), selectionBlock.getZ());
                 if (area == null) {
                     continue;
                 }
 
-                if (!area.canSetting(player.getUniqueId(), RoleSetting.BLOCK_PLACE)) {
+                if (!area.isTrusted(player.getUniqueId())) {
                     return false;
                 }
             }
@@ -842,21 +825,6 @@ public class WandEvents implements Listener {
         if (townyPlugin != null) {
             for (Block selectionBlock : selection) {
                 if (!PlayerCacheUtil.getCachePermission(player, selectionBlock.getLocation(), Material.STONE, TownyPermission.ActionType.BUILD)) {
-                    return false;
-                }
-            }
-        }
-
-        Plugin residencePlugin = getExternalPlugin("Residence");
-        if (residencePlugin != null) {
-            for (Block selectionBlock : selection) {
-                ClaimedResidence res = Residence.getInstance().getResidenceManager().getByLoc(selectionBlock.getLocation());
-                if (res == null) {
-                    return false;
-                }
-
-                ResidencePermissions perms = res.getPermissions();
-                if (!perms.playerHas(player, com.bekvon.bukkit.residence.containers.Flags.build, false)) {
                     return false;
                 }
             }

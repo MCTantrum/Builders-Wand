@@ -17,11 +17,4 @@ public class UpdateNotification implements Listener {
         this.config = config;
         this.update = update;
     }
-
-    @EventHandler
-    public void onJoin(PlayerJoinEvent event) {
-        Player player = event.getPlayer();
-        if (!player.hasPermission("buildersWand.updateNotification")) return;
-        update.sendUpdateMessage(player);
-    }
 }
